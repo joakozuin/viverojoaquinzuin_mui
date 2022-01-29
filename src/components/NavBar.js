@@ -44,8 +44,8 @@ const NavBar = () => {
 
         <Toolbar disableGutters>
          
-            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>       
-                <img src={logo} alt="Vivero Joaquin" width="50" height="50"></img>
+            <Box sx={{display: { xs: 'none', md: 'flex' }, width:50, height:50}}> 
+                <Avatar alt="Vivero" src={logo} variant="square"  />
             </Box>
 
           <Typography
@@ -71,9 +71,8 @@ const NavBar = () => {
               <MenuIcon />
               
             </IconButton>
-
-            <img src={logo} alt="Vivero Joaquin" width="50" height="50"></img>
-
+           
+            <Avatar alt="Vivero" src={logo} variant="square"  />
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -129,7 +128,7 @@ const NavBar = () => {
           <Box sx={{ flexGrow: 0 }}>
 
             <CartWidget />
-            
+
             <Tooltip title="Abrir Perfil">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Jako" src={avatarJoako} />
