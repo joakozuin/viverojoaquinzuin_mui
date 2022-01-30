@@ -54,7 +54,6 @@ const NavBar = () => {
             component="div"
             sx={{flexGrow: 1, mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-           
             VIVERO Joaquin
           </Typography>
 

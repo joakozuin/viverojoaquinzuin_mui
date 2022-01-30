@@ -18,7 +18,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 export default function CartWidget() {
   return (
-    <IconButton aria-label="cart">
+    <IconButton aria-label="cart" sx={{ mr: 2}}  >
       <StyledBadge badgeContent={4} color="error">
         <ShoppingCartIcon sx={{ color: pink[50],fontSize: 30 }}/>
       </StyledBadge>
