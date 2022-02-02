@@ -31,7 +31,7 @@ const ItemCount =() =>{
         <div>
         <Button variant="outlined" sx={{my:2}}
             onClick={() => {alert(`Cantidad de Plantas en el Carrito: ${contador}`); }}>
-            Mostrar
+            Agregar al Carro
         </Button>
           </div>
       </div>
