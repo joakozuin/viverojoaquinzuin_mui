@@ -63,8 +63,8 @@ const ItemList=()=>{
   
  
     return(
-        <div style={{ marginTop: 5, padding: 10 }}>
-        <Grid container spacing={2} justify="center">
+        <div style={{ marginTop: 5, padding:10 }}>
+        <Grid container spacing={4} justify="center" justifyContent="center">
   
          {/*  {plantas.map(planta => (
               <Item key={planta.id} planta={plant}/>
