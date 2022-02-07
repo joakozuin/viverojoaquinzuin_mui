@@ -25,14 +25,12 @@ const ItemList=()=>{
 
        //Llamada asincrónica
        //--------------------
-
         const leerBD=async(plantas)=>{
           try{
            let plantass=await cFetch(2000,plantas,true)
            setPlant(plantass);   
           }
-          catch(err){console.log('El error es:',err)}; 
-          
+          catch(err){console.log('El error es:',err)};  
         }
 
         leerBD(plantas);
