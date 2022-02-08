@@ -47,30 +47,30 @@ const ItemList=()=>{
         if(is_ok){
            resolve(datos);
         }else{
-           reject("Error leyendo datos en la BD");
+           reject("Error leyendo datos de la BD");
         }
       },tiempo)
     });
    };
    
-
-  const LectPlant=(props)=>{
-      const items=props.plantas.map((planta) => ( 
-      <Item key={planta.id} planta={planta}/> 
-    ));
-   return items
-  }
   
- 
     return(
         <div style={{ marginTop: 5, padding:10 }}>
-        <Grid container spacing={4} justify="center" justifyContent="center">
-  
-         {/*  {plantas.map(planta => (
-              <Item key={planta.id} planta={plant}/>
-          ))} */}
+          <Grid container spacing={4} justify="center" justifyContent="center">
+           
+            {plant.length > 0 ? (
+              plant.map(planta => (
+               <Item
+                key={planta.id}
+                 planta={planta}
+                 />
+           ))
+           ): (
 
-          <LectPlant plantas={plant} />
+            <h1>Cargando Datos....</h1>)
+           
+           }
+          
 
         </Grid>
       </div>
