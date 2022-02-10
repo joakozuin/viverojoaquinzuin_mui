@@ -29,9 +29,11 @@ return(
           <Typography component="p">{props.planta.detalle}</Typography>
           <hr/>
           <Typography gutterBottom variant="h7" component="h2">
-            Precio {props.planta.precio} [Stock {props.planta.stock} un]
+            Precio {props.planta.precio} 
           </Typography>
-          
+          <Typography gutterBottom variant="h7" component="h4">
+             [Stock {props.planta.stock} un]
+          </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>

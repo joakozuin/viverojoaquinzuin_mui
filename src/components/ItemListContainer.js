@@ -4,7 +4,6 @@ import ItemList from "./ItemList";
 import {useEffect,useState} from 'react'
 import coderFetch from "../helper/coderFetch"
 import  plantas from "../assets/data/bdPlantas.json";
-import ItemDetailContainer from "./ItemDetailContainer";
 
 const ItemListContainer =(props) =>{
 
@@ -35,21 +34,10 @@ const ItemListContainer =(props) =>{
       <p>Desfio N6</p>
 
        {plant.length > 0 ?
-
         <ItemList plantas={plant} />
-        
        :
         <h1>Cargando Datos....</h1>
        }
-
-       {plant.length > 0 ?
-
-        <ItemDetailContainer planta={plant[1]}/>
-       :
-       <hr/>
-
-       }  
-      
       
       {/* <img src={img00} alt="Vivero Joaquin" width="500" height="600"></img> */}
     </div>

@@ -7,7 +7,7 @@ import ItemDetail from './ItemDetail';
 
 const ItemDetailContainer =(props) =>{
 
-  /* const [plant,setPlant]=useState([]);
+  const [plant,setPlant]=useState([]);
  
   useEffect(()=>{
      
@@ -22,7 +22,7 @@ const ItemDetailContainer =(props) =>{
 
       leerBD(plantas);
 
-    },[]); */
+    },[]);
 
 
   return (
@@ -31,10 +31,11 @@ const ItemDetailContainer =(props) =>{
       <Grid container spacing={4} justify="center" justifyContent="center" sx={{marginTop: 5}} >
        
         {console.log("dentro del contenedor",props.planta)}
-      
-       <ItemDetail
-           planta={props.planta}
-       /> 
+
+        {plant.length > 0 ?
+          <ItemDetail planta={plant[1]}/>
+        :
+        <hr/>}  
 
       </Grid>
     </div>
