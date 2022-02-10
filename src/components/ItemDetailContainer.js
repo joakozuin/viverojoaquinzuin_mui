@@ -33,7 +33,7 @@ const ItemDetailContainer =(props) =>{
         {console.log("dentro del contenedor",props.planta)}
 
         {plant.length > 0 ?
-          <ItemDetail planta={plant[1]}/>
+          <ItemDetail planta={plant[6]}/>
         :
         <hr/>}  
 
