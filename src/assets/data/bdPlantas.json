@@ -11,7 +11,7 @@
       "id": "2",
       "nombre":"Alegria del Hogar",
       "img": "/img/AlegriaDelHogar.svg",
-      "precio": "$50",
+      "precio": "$70",
       "stock": "10",
       "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
     },
@@ -20,7 +20,7 @@
       "nombre":"Aspidistra",
       "img": "/img/Aspidistra.svg",
       "precio": "$70",
-      "stock": "9",
+      "stock": "12",
       "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
     },
     {

@@ -32,10 +32,10 @@ const ItemCount =() =>{
           <Button  onClick={aumentar} >+</Button>
         </ButtonGroup>
         <div>
-        <Button size="small" variant="outlined" sx={{my:1}}
+         <Button size="small" variant="outlined" sx={{my:1}}
             onClick={() => {alert(`Cantidad de Plantas en el Carrito: ${contador}`); }}>
-           Agregar <ShoppingCartIcon sx={{ color: green[500],fontSize: 20 }}/>
-        </Button>
+            Agregar<ShoppingCartIcon sx={{ color: green[500],fontSize: 20 }}/>
+         </Button>
           </div>
       </div>
     );
