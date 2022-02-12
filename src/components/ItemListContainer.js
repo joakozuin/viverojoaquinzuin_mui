@@ -1,48 +1,59 @@
-//import img00 from "../assets/img/AbejaFlor00.png";
-import ItemCount from "./ItemCount";
+
 import ItemList from "./ItemList";
 import {useEffect,useState} from 'react'
 import coderFetch from "../helper/coderFetch"
 import  plantas from "../assets/data/bdPlantas.json";
+import {useParams} from 'react-router-dom'
 
-const ItemListContainer =(props) =>{
+const ItemListContainer = (props) => {
+  const [plant, setPlant] = useState([]);
+  
+  const {categoria}=useParams();
 
-  const [plant,setPlant]=useState([]);
- 
-  useEffect(()=>{
-     
-     console.log('Renderizando:');
-      const leerBD=async(plantas)=>{
-        try{
-         let plantass=await coderFetch(2000,plantas,true)
-         setPlant(plantass);   
+  //console.log(`Categoria Destructurado:${categoria}`);
+
+  useEffect(() => {
+    console.log("Renderizando:");
+    const leerBD = async (plantas) => {
+      try {
+
+        if(categoria===undefined){
+             let plantass = await coderFetch(2000, plantas, true);
+             setPlant(plantass);
+             console.log(`Categoria Destructurado:${categoria}`);
+             console.log(`Renderizando:${plant}`);
+        }else{
+             let plantass = await coderFetch(2000, plantas.filter(plan=>plan.categoria===categoria),true);
+             setPlant(plantass);
+             console.log(`Categoria Destructurado:${categoria}`);
+             console.log(`Renderizando:${plant}`);
         }
-        catch(err){console.log('El error es:',err)};  
+
+      } catch (err) {
+
+        console.log("El error es:", err);
+
       }
+    };
 
-      leerBD(plantas);
+    leerBD(plantas);
 
-    },[]);
-
+  }, [categoria]);
 
   return (
     <div>
-      <p>Desfio N4</p>
-      <h1>{props.saludos}</h1>
-      <p>Desfio N5</p>
-      <ItemCount />
-      <p>Desfio N6</p>
-
-       {plant.length > 0 ?
-        <ItemList plantas={plant} />
-       :
-        <h1>Cargando Datos....</h1>
-       }
       
-      {/* <img src={img00} alt="Vivero Joaquin" width="500" height="600"></img> */}
+      <h1>{props.saludos}</h1>
+
+      {plant.length > 0 ? (
+        <ItemList plantas={plant} />
+      ) : (
+        <h1>Cargando Datos....</h1>
+      )}
+
     </div>
   );
-}
+};
 
 
 export default ItemListContainer;

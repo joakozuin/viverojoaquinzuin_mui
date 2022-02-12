@@ -14,7 +14,10 @@ import ItemCount from "./ItemCount";
 
 const ItemDetail=(props)=>{
 
-//console.log(props);
+console.log("Dentro del itemDetail",props);
+console.log("id:",props.planta.id);
+console.log("nombre:",props.planta.nombre);
+
 return(
     <>
      <Card sx={{ display: 'flex' }}>
@@ -28,6 +31,9 @@ return(
         <CardContent sx={{ flex: '1 0 auto' , marginTop: 20}}>
           <Typography component="div" variant="h5">
             {props.planta.nombre}
+          </Typography>
+          <Typography gutterBottom variant="h6" component="h2">
+           Planta: {props.planta.categoria}
           </Typography>
           <Typography variant="subtitle1" color="text.secondary" component="div">
             {props.planta.detalle}

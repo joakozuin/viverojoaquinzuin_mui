@@ -23,8 +23,11 @@ return(
           title={props.planta.nombre}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom variant="h4" component="h2">
             {props.planta.nombre}
+          </Typography>
+          <Typography gutterBottom variant="h6" component="h2">
+           Planta: {props.planta.categoria}
           </Typography>
           <Typography component="p">{props.planta.detalle}</Typography>
           <hr/>

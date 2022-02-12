@@ -16,16 +16,15 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import CartWidget from "./CartWidget";
 import {Link} from "react-router-dom";
-import { useState } from "react";
-import ButtonGroup from '@mui/material/ButtonGroup';
+import ItemCountDet from "./ItemCountDet";
 
 const pages = ['exterior', 'interior', 'detalles','Nosotros'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
 const NavBar = () => {
-  const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const is_ok=false;
 
@@ -44,18 +43,6 @@ const NavBar = () => {
     setAnchorElUser(null);
   };
 
-
-  const [contador,setContador]=useState(7);
-
-  const disminuir=()=>{
-   setContador(contador>=2 ? contador-1 : contador)
-  }
-
-  const aumentar=()=>{
-   
-   setContador(contador<=10 ? contador+1 : contador)
-   
-  }
   
 
   return (
@@ -200,27 +187,17 @@ const NavBar = () => {
               </Link>
 
 
-              <Link to={`/item/${contador}`} style={{ textDecoration: "none", color: "white" }} >
-                {/* <Button
+              <Link to='/item/7' style={{ textDecoration: "none", color: "white" }} >
+                <Button
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
                   Detalles Plantas 
-                </Button> */}
-                <div style={{marginTop:16, marginLeft:15}}>
-                   <ButtonGroup variant="contained" color="secondary" aria-label="outlined secondary button group" size="small" >
-                    <Button  onClick={disminuir}>-</Button>
-                     <Button variant="text" >
+                </Button>
 
-                       <Typography textAlign="center" color="white"> Item: {contador}</Typography>
-                    
-                      </Button>
-                     <Button  onClick={aumentar} >+</Button>
-                   </ButtonGroup>
-                </div>
               </Link>
-
               
+              <ItemCountDet />
 
 
           </Box>

@@ -5,7 +5,8 @@
       "img": "/img/AbejaFlor.png",
       "precio": "$20",
       "stock": "7",
-      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "categoria":"interior"
     },
     {
       "id": "2",
@@ -13,7 +14,8 @@
       "img": "/img/AlegriaDelHogar.svg",
       "precio": "$70",
       "stock": "10",
-      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "categoria":"interior"
     },
     {
       "id": "3",
@@ -21,7 +23,8 @@
       "img": "/img/Aspidistra.svg",
       "precio": "$70",
       "stock": "12",
-      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "categoria":"exterior"
     },
     {
       "id": "4",
@@ -29,7 +32,8 @@
       "img": "/img/DracenaMassangeana.svg",
       "precio": "$70",
       "stock": "9",
-      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "categoria":"interior"
     },
     {
       "id": "5",
@@ -37,7 +41,8 @@
       "img": "/img/DracenaRobusta.svg",
       "precio": "$70",
       "stock": "9",
-      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "categoria":"exterior"
     },
     {
       "id": "6",
@@ -45,7 +50,8 @@
       "img": "/img/DurantaAurea.svg",
       "precio": "$70",
       "stock": "9",
-      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "categoria":"exterior"
     },
     {
       "id": "7",
@@ -53,7 +59,8 @@
       "img": "/img/EstrellaFederal.svg",
       "precio": "$70",
       "stock": "9",
-      "detalle": "Planta de la familia Euphorbiaceae nativa de Mesoamérica."
+      "detalle": "Planta de la familia Euphorbiaceae nativa de Mesoamérica.",
+      "categoria":"interior"
     },
     {
       "id": "8",
@@ -61,7 +68,8 @@
       "img": "/img/Geraneo.svg",
       "precio": "$70",
       "stock": "9",
-      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "categoria":"exterior"
     },
     {
       "id": "9",
@@ -69,7 +77,8 @@
       "img": "/img/HelechoAsplenium.svg",
       "precio": "$70",
       "stock": "9",
-      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "categoria":"interior"
     },
     {
       "id": "10",
@@ -77,7 +86,8 @@
       "img": "/img/MosteraDeliciosa.svg",
       "precio": "$70",
       "stock": "9",
-      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "categoria":"exterior"
     },
     {
       "id": "11",
@@ -85,7 +95,8 @@
       "img": "/img/PastoIngles.svg",
       "precio": "$70",
       "stock": "9",
-      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "categoria":"interior"
     },
     {
       "id": "12",
@@ -93,7 +104,8 @@
       "img": "/img/Pocthus.svg",
       "precio": "$70",
       "stock": "9",
-      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "categoria":"exterior"
     },
     {
       "id": "13",
@@ -101,7 +113,8 @@
       "img": "/img/PortadaStrelitzia.svg",
       "precio": "$70",
       "stock": "9",
-      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "categoria":"interior"
     },
     {
       "id": "14",
@@ -109,7 +122,8 @@
       "img": "/img/Spathphyllum.svg",
       "precio": "$70",
       "stock": "9",
-      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+      "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "categoria":"exterior"
     }
 
 ]
