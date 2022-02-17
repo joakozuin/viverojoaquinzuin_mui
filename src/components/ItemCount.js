@@ -23,7 +23,7 @@ const ItemCount =() =>{
 
 
     const manejaBotonCarr=()=>{
-      //alert(`Cantidad de Plantas en el Carrito: ${contador}`);
+      alert(`Cantidad de Plantas en el Carrito: ${contador}`);
       setBotCarrito(false);
     }
 
