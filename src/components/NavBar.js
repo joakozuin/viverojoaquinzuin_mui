@@ -45,19 +45,6 @@ const NavBar = () => {
   };
 
 
-  const [contador,setContador]=useState(7);
-
-  const disminuir=()=>{
-   setContador(contador>=2 ? contador-1 : contador)
-  }
-
-  const aumentar=()=>{
-   
-   setContador(contador<=10 ? contador+1 : contador)
-   
-  }
-  
-
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -198,29 +185,7 @@ const NavBar = () => {
                   Plantas Exterior
                 </Button>
               </Link>
-
-
-              <Link to={`/item/${contador}`} style={{ textDecoration: "none", color: "white" }} >
-                {/* <Button
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
-                >
-                  Detalles Plantas 
-                </Button> */}
-                <div style={{marginTop:16, marginLeft:15}}>
-                   <ButtonGroup variant="contained" color="secondary" aria-label="outlined secondary button group" size="small" >
-                    <Button  onClick={disminuir}>-</Button>
-                     <Button variant="text" >
-
-                       <Typography textAlign="center" color="white"> Item: {contador}</Typography>
-                    
-                      </Button>
-                     <Button  onClick={aumentar} >+</Button>
-                   </ButtonGroup>
-                </div>
-              </Link>
-
-              
+          
 
 
           </Box>

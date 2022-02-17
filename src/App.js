@@ -4,13 +4,14 @@ import {BrowserRouter,Routes, Route} from "react-router-dom";
 import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-
+import { Car } from "./components/Car";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <NavBar />
+
         <Routes>
           <Route
             path="/"
@@ -23,6 +24,10 @@ function App() {
           <Route
             path="/item/:id"
             element={<ItemDetailContainer saludos={" Hola BienVenidos ...."} />}
+          />
+          <Route
+            path="/car"
+            element={<Car saludos={" Hola BienVenidos ...."} />}
           />
         </Routes>
       </div>

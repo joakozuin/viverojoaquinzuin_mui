@@ -12,7 +12,7 @@ const ItemList=(props)=>{
             {props.plantas.length > 0 ? (
               props.plantas.map(planta => (
                <Item
-                key={planta.id}
+                 key={planta.id}
                  planta={planta}
                  />
            ))

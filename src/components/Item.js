@@ -5,7 +5,7 @@ import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-
+import {Link} from "react-router-dom";
 import ItemCount from "./ItemCount";
 
 const Item=(props)=>{
@@ -14,13 +14,16 @@ return(
     <>
     <Grid item >
      <Card>
+
+     <Link to={`/item/${props.planta.id}`} style={{ textDecoration: "none" }} >
+
       <CardActionArea>
         <CardMedia
           component="img"
           alt={props.planta.nombre}
           height="385"
           image={props.planta.img}
-          title={props.planta.nombre}
+          title={`${props.planta.nombre}  (Click para más Detalles)`}
         />
         <CardContent>
           <Typography gutterBottom variant="h4" component="h2">
@@ -39,6 +42,8 @@ return(
           </Typography>
         </CardContent>
       </CardActionArea>
+      </Link>
+
       <CardActions>
         <ItemCount />
       </CardActions>
