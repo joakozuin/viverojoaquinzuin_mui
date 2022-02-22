@@ -4,13 +4,17 @@ import {BrowserRouter,Routes, Route} from "react-router-dom";
 import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import { Car } from "./components/Car";
+import Cart  from "./components/Cart/Cart";
+import CartContextProvider from "./components/Context/CartContext";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <NavBar />
+
+    <CartContextProvider>
+
+     <BrowserRouter>
+       <div className="App">
+         <NavBar />
 
         <Routes>
           <Route
@@ -26,12 +30,15 @@ function App() {
             element={<ItemDetailContainer saludos={" Hola BienVenidos ...."} />}
           />
           <Route
-            path="/car"
-            element={<Car saludos={" Hola BienVenidos ...."} />}
+            path="/cart"
+            element={<Cart saludos={" Hola BienVenidos ...."} />}
           />
         </Routes>
-      </div>
-    </BrowserRouter>
+       </div>
+     </BrowserRouter>
+
+    </CartContextProvider>
+
   );
 }
 

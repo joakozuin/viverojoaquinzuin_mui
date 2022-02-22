@@ -3,7 +3,7 @@
       "id": "1",
       "nombre":"Abeja",
       "img": "/img/AbejaFlor.png",
-      "precio": "$20",
+      "precio": "20",
       "stock": "7",
       "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
       "categoria":"interior"
@@ -12,7 +12,7 @@
       "id": "2",
       "nombre":"Alegria del Hogar",
       "img": "/img/AlegriaDelHogar.svg",
-      "precio": "$70",
+      "precio": "70",
       "stock": "10",
       "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
       "categoria":"interior"
@@ -21,7 +21,7 @@
       "id": "3",
       "nombre":"Aspidistra",
       "img": "/img/Aspidistra.svg",
-      "precio": "$70",
+      "precio": "70",
       "stock": "12",
       "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
       "categoria":"exterior"
@@ -30,7 +30,7 @@
       "id": "4",
       "nombre":"Dracena Massangeana",
       "img": "/img/DracenaMassangeana.svg",
-      "precio": "$70",
+      "precio": "70",
       "stock": "9",
       "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
       "categoria":"interior"
@@ -39,7 +39,7 @@
       "id": "5",
       "nombre":"Dracena Robusta",
       "img": "/img/DracenaRobusta.svg",
-      "precio": "$70",
+      "precio": "70",
       "stock": "9",
       "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
       "categoria":"exterior"
@@ -48,7 +48,7 @@
       "id": "6",
       "nombre":"Duranta Aurea",
       "img": "/img/DurantaAurea.svg",
-      "precio": "$70",
+      "precio": "70",
       "stock": "9",
       "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
       "categoria":"exterior"
@@ -57,7 +57,7 @@
       "id": "7",
       "nombre":"Estrella Federal",
       "img": "/img/EstrellaFederal.svg",
-      "precio": "$70",
+      "precio": "70",
       "stock": "9",
       "detalle": "Planta de la familia Euphorbiaceae nativa de Mesoamérica.",
       "categoria":"interior"
@@ -66,7 +66,7 @@
       "id": "8",
       "nombre":"Geraneo",
       "img": "/img/Geraneo.svg",
-      "precio": "$70",
+      "precio": "70",
       "stock": "9",
       "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
       "categoria":"exterior"
@@ -75,7 +75,7 @@
       "id": "9",
       "nombre":"Helecho Asplenium",
       "img": "/img/HelechoAsplenium.svg",
-      "precio": "$70",
+      "precio": "70",
       "stock": "9",
       "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
       "categoria":"interior"
@@ -84,7 +84,7 @@
       "id": "10",
       "nombre":"Mostera Deliciosa",
       "img": "/img/MosteraDeliciosa.svg",
-      "precio": "$70",
+      "precio": "70",
       "stock": "9",
       "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
       "categoria":"exterior"
@@ -93,7 +93,7 @@
       "id": "11",
       "nombre":"PastoIngles",
       "img": "/img/PastoIngles.svg",
-      "precio": "$70",
+      "precio": "70",
       "stock": "9",
       "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
       "categoria":"interior"
@@ -102,7 +102,7 @@
       "id": "12",
       "nombre":"Pocthus",
       "img": "/img/Pocthus.svg",
-      "precio": "$70",
+      "precio": "70",
       "stock": "9",
       "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
       "categoria":"exterior"
@@ -111,7 +111,7 @@
       "id": "13",
       "nombre":"Portada Strelitzia",
       "img": "/img/PortadaStrelitzia.svg",
-      "precio": "$70",
+      "precio": "70",
       "stock": "9",
       "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
       "categoria":"interior"
@@ -120,7 +120,7 @@
       "id": "14",
       "nombre":"Spathphyllum",
       "img": "/img/Spathphyllum.svg",
-      "precio": "$70",
+      "precio": "70",
       "stock": "9",
       "detalle": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
       "categoria":"exterior"

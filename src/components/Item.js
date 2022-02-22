@@ -8,44 +8,46 @@ import CardMedia from "@mui/material/CardMedia";
 import {Link} from "react-router-dom";
 import ItemCount from "./ItemCount";
 
-const Item=(props)=>{
+const Item=({planta})=>{
 
 return(
     <>
     <Grid item >
      <Card>
 
-     <Link to={`/item/${props.planta.id}`} style={{ textDecoration: "none" }} >
+     <Link to={`/item/${planta.id}`} style={{ textDecoration: "none" , color: "black"}} >
 
       <CardActionArea>
         <CardMedia
           component="img"
-          alt={props.planta.nombre}
+          alt={planta.nombre}
           height="385"
-          image={props.planta.img}
-          title={`${props.planta.nombre}  (Click para más Detalles)`}
+          image={planta.img}
+          title={`${planta.nombre}  (Click para más Detalles)`}
         />
         <CardContent>
           <Typography gutterBottom variant="h4" component="h2">
-            {props.planta.nombre}
+            {planta.nombre}
           </Typography>
           <Typography gutterBottom variant="h6" component="h2">
-           Planta: {props.planta.categoria}
+           Planta: {planta.categoria}
           </Typography>
-          <Typography component="p">{props.planta.detalle}</Typography>
+          <Typography component="p">{planta.detalle}</Typography>
           <hr/>
           <Typography gutterBottom variant="h7" component="h2">
-            Precio {props.planta.precio} 
+            Precio ${planta.precio} 
           </Typography>
           <Typography gutterBottom variant="h7" component="h4">
-             [Stock {props.planta.stock} un]
+             [Stock {planta.stock} un]
           </Typography>
         </CardContent>
       </CardActionArea>
       </Link>
 
       <CardActions>
-        <ItemCount />
+
+          <ItemCount planta={planta}/>
+
       </CardActions>
     </Card>
    </Grid>

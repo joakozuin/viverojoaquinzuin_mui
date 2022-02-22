@@ -23,7 +23,7 @@ const ItemDetailContainer = (props) => {
         //console.log(`Renderizando dentro del try:`,plantass);
 
       } catch (err) {
-        console.log("El error es:", err);
+        //console.log("El error es:", err);
       }
     };
 
@@ -40,7 +40,7 @@ const ItemDetailContainer = (props) => {
         justifyContent="center"
         sx={{ marginTop: 5 }}
       >
-        {console.log("dentro del contenedor:",plant )}
+        {/* {console.log("dentro del contenedor:",plant )} */}
 
         {plant.length > 0 ? (
           <ItemDetail planta={plant[0]} />

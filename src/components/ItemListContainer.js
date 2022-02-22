@@ -13,25 +13,25 @@ const ItemListContainer = (props) => {
   //console.log(`Categoria Destructurado:${categoria}`);
 
   useEffect(() => {
-    console.log("Renderizando:");
+    //console.log("Renderizando:");
     const leerBD = async (plantas) => {
       try {
 
         if(categoria===undefined){
              let plantass = await coderFetch(2000, plantas, true);
              setPlant(plantass);
-             console.log(`Categoria Destructurado:${categoria}`);
-             console.log(`Renderizando:${plant}`);
+             //console.log(`Categoria Destructurado:${categoria}`);
+             //console.log(`Renderizando:${plant}`);
         }else{
              let plantass = await coderFetch(2000, plantas.filter(plan=>plan.categoria===categoria),true);
              setPlant(plantass);
-             console.log(`Categoria Destructurado:${categoria}`);
-             console.log(`Renderizando:${plant}`);
+             //console.log(`Categoria Destructurado:${categoria}`);
+             //console.log(`Renderizando:${plant}`);
         }
 
       } catch (err) {
 
-        console.log("El error es:", err);
+        //console.log("El error es:", err);
 
       }
     };
