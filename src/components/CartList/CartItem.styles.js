@@ -11,15 +11,23 @@ export const Wrapper = styled.div`
     flex: 1;
   }
 
-  .information,
-  .buttons {
+  .information{
     display: flex;
     justify-content: space-between;
   }
 
+  .buttons {
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    max-width: 50px;
+    height:50px;
+  }
+
   img {
-    max-width: 110px;
+    max-width: 150px;
     object-fit: cover;
     margin-left: 40px;
+    margin-right: 40px;
   }
 `;

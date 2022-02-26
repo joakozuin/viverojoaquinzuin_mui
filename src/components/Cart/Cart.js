@@ -2,10 +2,14 @@
 
 import CartItem from "../CartList/CartItem";
 
-import { Wrapper } from "./Cart.styles";
+import { Wrapper,Pie } from "./Cart.styles";
 import {useContext } from "react";
 import { CartContext } from "../Context/CartContext";
-
+import {Link} from "react-router-dom";
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import {green} from '@mui/material/colors';
 
 const Cart = () => {
   
@@ -15,15 +19,14 @@ const Cart = () => {
 
 
    const calculateTotal=(carrito)=>{
-     const total=carrito.reduce((acc, item) => acc + item.cantidad * parseFloat(item.precio), 0);
+     const total=carrito.reduce((sum, item) => sum + item.cantidad * parseFloat(item.precio), 0);
      return total
    } 
     
   return (
-  
     <Wrapper>
-      <h2>Plantas en el Carrito</h2>
-      {carrito.length === 0 ? <p>No hay plantas en el Carrito.</p> : null}
+      <h1>Plantas en el Carrito</h1>
+      {carrito.length === 0 ? <h2>No hay plantas en el Carrito.</h2> : null}
       {carrito.map((item) => (
         <CartItem
           key={item.id}
@@ -34,7 +37,28 @@ const Cart = () => {
         />
       ))}
 
-      <h2>Total: ${calculateTotal(carrito).toFixed(2)}</h2>
+      <Pie>
+        <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+          <Button
+            variant="contained"
+            startIcon={<AddShoppingCartIcon />}
+            sx={{ marginTop: 1 }}
+          >
+            Seguir Comprando
+          </Button>
+        </Link>
+
+        <h2>Total: ${calculateTotal(carrito).toFixed(2)}</h2>
+
+        <Button
+          variant="contained"
+          endIcon={<SendIcon />}
+          sx={{ marginTop: 1, backgroundColor: green[500] }}
+          onClick={() => clear()}
+        >
+          Procesar la Compra
+        </Button>
+      </Pie>
     </Wrapper>
   );
 };

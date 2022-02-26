@@ -17,7 +17,8 @@ import MenuItem from '@mui/material/MenuItem';
 import CartWidget from "./CartWidget";
 import {Link} from "react-router-dom";
 import { useState } from "react";
-import ButtonGroup from '@mui/material/ButtonGroup';
+import { CartContext } from "./Context/CartContext";
+import {useContext } from "react";
 
 const pages = ['exterior', 'interior', 'detalles','Nosotros'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -44,6 +45,7 @@ const NavBar = () => {
     setAnchorElUser(null);
   };
 
+  const {carrito}=useContext(CartContext);
 
   return (
     <AppBar position="static">
@@ -186,12 +188,18 @@ const NavBar = () => {
                 </Button>
               </Link>
           
-
-
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <CartWidget />
+
+         
+           <Link to='/cart' style={{ textDecoration: "none" }} >
+             <CartWidget
+             
+               carrito={carrito}
+            
+             />
+            </Link>
 
             <Tooltip title="Abrir Perfil">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

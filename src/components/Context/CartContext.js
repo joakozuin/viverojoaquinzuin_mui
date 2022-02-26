@@ -1,5 +1,5 @@
 import { createContext,useState } from "react";
-
+import {Link} from "react-router-dom";
 
 export const CartContext=createContext();
 
@@ -25,6 +25,7 @@ const CartContextProvider=({children})=>{
             setCarrito([...carrito,iitem]);
            
         }
+
     }
 
 
@@ -35,8 +36,9 @@ const CartContextProvider=({children})=>{
     }
 
     const clear=()=>{
-
+        alert(`Su compra se procesó con éxito, ...pronto recibirá sus plantas`);
         setCarrito([]);
+        <Link to="/" style={{ textDecoration: "none", color: "white" }}></Link>
     }
 
   return(

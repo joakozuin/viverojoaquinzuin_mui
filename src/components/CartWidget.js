@@ -16,12 +16,22 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 
-export default function CartWidget() {
+export default function CartWidget({carrito}) {
+
+    const total=carrito.reduce((sum, item) => sum + item.cantidad, 0);
+    
   return (
-    <IconButton aria-label="cart" sx={{ mr: 2}}  >
-      <StyledBadge badgeContent={100} color="error">
-        <ShoppingCartIcon sx={{ color: pink[50],fontSize: 30 }}/>
-      </StyledBadge>
-    </IconButton>
+    <>
+        { total > 0 && (
+
+         <IconButton aria-label="cart" sx={{ mr: 2}}  >
+            <StyledBadge badgeContent={total} color="error">
+              <ShoppingCartIcon sx={{ color: pink[50],fontSize: 30 }}/>
+            </StyledBadge>
+         </IconButton>
+
+        )    
+     }
+  </>
   );
 }
