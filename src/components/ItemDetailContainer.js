@@ -1,34 +1,49 @@
 
 import {useEffect,useState} from 'react'
 import {Grid}  from "@mui/material";
-import coderFetch from "../helper/coderFetch"
-import  plantas from "../assets/data/bdPlantas.json";
+
+import db from "../helper/firebaseConfig"
+import { doc, getDoc,} from "firebase/firestore";
+
 import ItemDetail from './ItemDetail';
 import {useParams} from 'react-router-dom'
 
 const ItemDetailContainer = (props) => {
+
   const [plant, setPlant] = useState([]);
   const {id}=useParams();
 
-  //console.log(`id Destructurado:${id}`);
+   //console.log(`id Destructurado:${id}`);
 
   useEffect(() => {
-    console.log("Renderizando:");
-    const leerBD = async (plantas) => {
+
+    //console.log(`Renderizando id Destructurado:${id} -->${typeof(id)}`);
+
+
+    const leerBD = async () => {
       try {
 
-        let plantass = await coderFetch(500, plantas.filter(plan=>plan.id===id), true);
-        setPlant(plantass);
+        const docRef = doc(db, "plantas1", id);
+        const docSnap = await getDoc(docRef);
 
-        //console.log(`Renderizando dentro del try:`,plantass);
+        const planta=[{
+          id: docSnap.id,
+          ...docSnap.data()
+        }]
+
+
+        setPlant(planta);
 
       } catch (err) {
-        //console.log("El error es:", err);
+        console.log("El error es:", err);
       }
     };
 
-    leerBD(plantas);
+    leerBD();
+
   }, [id]);
+
+
 
   return (
     <div style={{ marginTop: 30 }}>

@@ -10,7 +10,7 @@ import { Wrapper } from "./CartItem.styles";
 
 const CartItem = ({item, removeFromCart,addItem,removeAll }) => {
 
-  console.log("Dentro CartItem",item);
+  //console.log("Dentro CartItem",item);
 
 
  return ( 

@@ -1,9 +1,12 @@
 
 import ItemList from "./ItemList";
 import {useEffect,useState} from 'react'
-import coderFetch from "../helper/coderFetch"
-import  plantas from "../assets/data/bdPlantas.json";
+
+import db from "../helper/firebaseConfig"
+import { collection, getDocs,query,where } from "firebase/firestore";
+
 import {useParams} from 'react-router-dom'
+
 
 const ItemListContainer = (props) => {
   const [plant, setPlant] = useState([]);
@@ -12,21 +15,45 @@ const ItemListContainer = (props) => {
 
   //console.log(`Categoria Destructurado:${categoria}`);
 
+
+  //Lectura de la BD-->Modo desde firebase
+  //**************************************
   useEffect(() => {
-    //console.log("Renderizando:");
-    const leerBD = async (plantas) => {
+  
+    const leerBD = async () => {
       try {
 
         if(categoria===undefined){
-             let plantass = await coderFetch(2000, plantas, true);
+
+             //Imagenes de plantas link disco Local
+             //************************************ 
+             //const querySnapshot = await getDocs(collection(db, "plantas"));
+
+             //Imagenes de plantas link fireStore
+             //************************************ 
+             const querySnapshot = await getDocs(collection(db, "plantas1"));
+
+             const plantass=querySnapshot.docs.map(document=>({
+                 id: document.id,
+                 ...document.data()
+             }))
+
+             
              setPlant(plantass);
-             //console.log(`Categoria Destructurado:${categoria}`);
-             //console.log(`Renderizando:${plant}`);
+
         }else{
-             let plantass = await coderFetch(2000, plantas.filter(plan=>plan.categoria===categoria),true);
-             setPlant(plantass);
-             //console.log(`Categoria Destructurado:${categoria}`);
-             //console.log(`Renderizando:${plant}`);
+            
+              const q =  query(collection(db, "plantas1"), where("categoria", "==", categoria));
+
+              const querySnapshot = await getDocs(q);
+
+              const plantass=querySnapshot.docs.map(document=>({
+                id: document.id,
+                ...document.data()
+              }))
+
+              setPlant(plantass);
+
         }
 
       } catch (err) {
@@ -36,9 +63,13 @@ const ItemListContainer = (props) => {
       }
     };
 
-    leerBD(plantas);
+    leerBD();
+
 
   }, [categoria]);
+
+
+
 
   return (
     <div>
