@@ -3,10 +3,12 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  align-content:center;
+  align-items:center;
   font-family: Arial, Helvetica, sans-serif;
   border-bottom: 1px solid blue;
   padding: 20px;
-  background-color: white;
+  background-color:white;
   div {
     flex: 1;
   }
@@ -25,7 +27,7 @@ export const Wrapper = styled.div`
   }
 
   img {
-    max-width: 150px;
+    max-width: 200px;
     object-fit: cover;
     margin-left: 40px;
     margin-right: 40px;

@@ -36,9 +36,7 @@ const CartContextProvider=({children})=>{
     }
 
     const clear=()=>{
-        alert(`Su compra se procesó con éxito, ...pronto recibirá sus plantas`);
         setCarrito([]);
-        <Link to="/" style={{ textDecoration: "none", color: "white" }}></Link>
     }
 
   return(

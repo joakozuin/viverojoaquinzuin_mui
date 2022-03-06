@@ -19,53 +19,44 @@ const ItemListContainer = (props) => {
   //Lectura de la BD-->Modo desde firebase
   //**************************************
   useEffect(() => {
-  
     const leerBD = async () => {
       try {
+        if (categoria === undefined) {
+          //Imagenes de plantas link disco Local
+          //************************************
+          //const querySnapshot = await getDocs(collection(db, "plantas"));
 
-        if(categoria===undefined){
+          //Imagenes de plantas link fireStore
+          //************************************
+          const querySnapshot = await getDocs(collection(db, "plantas1"));
 
-             //Imagenes de plantas link disco Local
-             //************************************ 
-             //const querySnapshot = await getDocs(collection(db, "plantas"));
+          const plantass = querySnapshot.docs.map((document) => ({
+            id: document.id,
+            ...document.data(),
+          }));
 
-             //Imagenes de plantas link fireStore
-             //************************************ 
-             const querySnapshot = await getDocs(collection(db, "plantas1"));
+          setPlant(plantass);
+        } else {
+          const q = query(
+            collection(db, "plantas1"),
+            where("categoria", "==", categoria)
+          );
 
-             const plantass=querySnapshot.docs.map(document=>({
-                 id: document.id,
-                 ...document.data()
-             }))
+          const querySnapshot = await getDocs(q);
 
-             
-             setPlant(plantass);
+          const plantass = querySnapshot.docs.map((document) => ({
+            id: document.id,
+            ...document.data(),
+          }));
 
-        }else{
-            
-              const q =  query(collection(db, "plantas1"), where("categoria", "==", categoria));
-
-              const querySnapshot = await getDocs(q);
-
-              const plantass=querySnapshot.docs.map(document=>({
-                id: document.id,
-                ...document.data()
-              }))
-
-              setPlant(plantass);
-
+          setPlant(plantass);
         }
-
       } catch (err) {
-
-        //console.log("El error es:", err);
-
+        console.log("El error es:", err);
       }
     };
 
     leerBD();
-
-
   }, [categoria]);
 
 

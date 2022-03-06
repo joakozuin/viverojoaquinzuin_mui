@@ -16,33 +16,27 @@ const ItemDetailContainer = (props) => {
    //console.log(`id Destructurado:${id}`);
 
   useEffect(() => {
-
     //console.log(`Renderizando id Destructurado:${id} -->${typeof(id)}`);
-
-
     const leerBD = async () => {
       try {
-
         const docRef = doc(db, "plantas1", id);
         const docSnap = await getDoc(docRef);
 
-        const planta=[{
-          id: docSnap.id,
-          ...docSnap.data()
-        }]
-
+        const planta = [
+          {
+            id: docSnap.id,
+            ...docSnap.data(),
+          },
+        ];
 
         setPlant(planta);
-
       } catch (err) {
         console.log("El error es:", err);
       }
     };
 
     leerBD();
-
   }, [id]);
-
 
 
   return (
@@ -55,8 +49,6 @@ const ItemDetailContainer = (props) => {
         justifyContent="center"
         sx={{ marginTop: 5 }}
       >
-        {/* {console.log("dentro del contenedor:",plant )} */}
-
         {plant.length > 0 ? (
           <ItemDetail planta={plant[0]} />
         ) : (

@@ -16,24 +16,24 @@ function App() {
        <div className="App">
          <NavBar />
 
-        <Routes>
-          <Route
-            path="/"
-            element={<ItemListContainer saludos={" Hola BienVenidos ...."} />}
-          />
-          <Route
-            path="/category/:categoria"
-            element={<ItemListContainer saludos={" Hola BienVenidos ...."} />}
-          />
-          <Route
-            path="/item/:id"
-            element={<ItemDetailContainer saludos={" Hola BienVenidos ...."} />}
-          />
-          <Route
+          <Routes>
+           <Route
+             path="/"
+             element={<ItemListContainer saludos={" Hola BienVenidos ...."} />}
+           />
+           <Route
+             path="/category/:categoria"
+             element={<ItemListContainer saludos={" Hola BienVenidos ...."} />}
+           />
+           <Route
+             path="/item/:id"
+             element={<ItemDetailContainer saludos={" Hola BienVenidos ...."} />}
+           />
+           <Route
             path="/cart"
             element={<Cart saludos={" Hola BienVenidos ...."} />}
-          />
-        </Routes>
+           />
+         </Routes>
        </div>
      </BrowserRouter>
 

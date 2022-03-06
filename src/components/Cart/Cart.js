@@ -2,38 +2,107 @@
 
 import CartItem from "../CartList/CartItem";
 
-import { Wrapper,Pie } from "./Cart.styles";
+import { Wrapper,Pie,Cabeza } from "./Cart.styles";
 import {useContext } from "react";
 import { CartContext } from "../Context/CartContext";
 import {Link} from "react-router-dom";
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import {green} from '@mui/material/colors';
+import DeleteIcon from '@mui/icons-material/DeleteTwoTone';
+import {green,red} from '@mui/material/colors';
+import Alert from '@mui/material/Alert';
+
+import db from "../../helper/firebaseConfig"
+import { doc,setDoc,collection,serverTimestamp,updateDoc, increment} from "firebase/firestore";
 
 const Cart = () => {
-  
+
   const {carrito,addItem,removeItem,clear}=useContext(CartContext);
 
   //console.log("Dentro Cart carrito",carrito);
 
-
-   const calculateTotal=(carrito)=>{
-     const total=carrito.reduce((sum, item) => sum + item.cantidad * parseFloat(item.precio), 0);
-     return total
+   const calcularTotal=(carrito)=>{
+     const totalComprado=carrito.reduce((sum, item) => sum + item.cantidad * parseFloat(item.precio), 0);
+     return totalComprado
    } 
     
+   const ordenCompra=()=>{
+        
+    const orden={
+
+        cliente:{
+          email:"leo@messi.com",
+          nombre:"Leo Messi",
+          telefono:"(891)-234567654"
+        },
+        fecha:serverTimestamp(),
+        compras:carrito.map((item)=>{return{
+               id:item.id,
+               nombre:item.nombre,
+               precio:item.precio,
+               cantidad:item.cantidad
+              }}),
+              total:calcularTotal(carrito).toFixed(2)
+      }
+      
+
+     const grabarOrdCompFirebase=async()=>{
+         const nuevaOrdenRef=doc(collection(db,"orden"));
+         await setDoc(nuevaOrdenRef,orden)
+         return nuevaOrdenRef;
+       }
+
+     grabarOrdCompFirebase()
+      .then((resultado) => {alert(`Su orden de Compra ha sido procesada,
+                          Total de la Compra: $${calcularTotal(carrito).toFixed(2)}
+                         Nro Orden de Compra: ${resultado.id}`);
+                         carrito.map(async (item)=>{
+
+                           const itemRef=doc(db,"plantas1",item.id);
+                           await updateDoc(itemRef,{
+                             stock: increment(-item.cantidad),
+                           })
+                         })
+                         clear();
+      })
+    
+      .catch((err)=>{console.log(err)});
+
+
+
+   }
+
   return (
     <Wrapper>
+
       <h1>Plantas en el Carrito</h1>
-      {carrito.length === 0 ? <h2>No hay plantas en el Carrito.</h2> : null}
+
+    <Cabeza>
+      {carrito.length === 0 ? (
+
+       <Alert variant="filled" severity="error">
+         Carrito Vacio, No hay Ninguna planta en el Carrito....!
+       </Alert>
+
+      ) : (
+         <Button
+          variant="contained"
+          endIcon={<DeleteIcon />}
+          sx={{ marginTop: 1,marginBottom:2, backgroundColor: red[500] }}
+          onClick={() => clear()}
+        >
+          Borrar el Carrito
+        </Button> 
+      )}
+    </Cabeza>
+
       {carrito.map((item) => (
         <CartItem
           key={item.id}
           item={item}
-          removeFromCart={removeItem}
           addItem={addItem}
-          removeAll={clear}
+          removeItem={removeItem}
         />
       ))}
 
@@ -48,16 +117,25 @@ const Cart = () => {
           </Button>
         </Link>
 
-        <h2>Total: ${calculateTotal(carrito).toFixed(2)}</h2>
+        <h2>Total Comprado: ${calcularTotal(carrito).toFixed(2)}</h2>
 
-        <Button
-          variant="contained"
-          endIcon={<SendIcon />}
-          sx={{ marginTop: 1, backgroundColor: green[500] }}
-          onClick={() => clear()}
-        >
-          Procesar la Compra
-        </Button>
+        {carrito.length === 0 ? (
+
+          null
+
+        ) : (
+          
+            <Button
+              variant="contained"
+              endIcon={<SendIcon />}
+              sx={{ marginTop: 1, backgroundColor: green[500] }}
+              onClick={() => ordenCompra()}
+            >
+                Procesar la Compra
+            </Button>
+
+      )}
+
       </Pie>
     </Wrapper>
   );
