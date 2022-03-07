@@ -35,7 +35,8 @@ const CartItem = ({item,addItem, removeItem }) => {
      addItem(item,-1)
 
    }else{
-     setConStock(false);
+     setCantidad(1)
+     setConStock(true);
    }
 
   }

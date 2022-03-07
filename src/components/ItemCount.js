@@ -22,7 +22,8 @@ const ItemCount =({planta}) =>{
       setCantidad(cant)
       setConStock(true);
     }else{
-      setConStock(false);
+      setConStock(true);
+      setCantidad(1)
     }
    }
 
