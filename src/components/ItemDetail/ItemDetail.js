@@ -2,33 +2,29 @@ import * as React from 'react';
 
 import { Typography } from "@mui/material";
 import Card from "@mui/material/Card";
-import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 
 import Box from '@mui/material/Box';
 
-import ItemCount from "./ItemCount";
+import ItemCount from "../ItemCount";
 
 
 const ItemDetail=({planta})=>{
 
-//console.log("Dentro del itemDetail",props);
-//console.log("id:",props.planta.id);
-//console.log("nombre:",props.planta.nombre);
 
 return(
     <>
-     <Card sx={{ display: 'flex' }}>
-     <CardMedia
+     <Card sx={{ display:'flex',alignItems:'center', flexDirection:{ xs: 'column' , md: 'row'  }  }}>
+      <CardMedia
         component="img"
-        sx={{ width: 500 }}
+        sx={{width:{xs:300,md:500}}}
         image={planta.img}
         alt={planta.nombre}
       />
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-        <CardContent sx={{ flex: '1 0 auto' , marginTop: 20}}>
+        <CardContent sx={{ flex: '1 0 auto' , marginTop:{xs:0,md:20}}}>
           <Typography component="div" variant="h5">
             {planta.nombre}
           </Typography>

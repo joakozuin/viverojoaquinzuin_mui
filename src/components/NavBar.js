@@ -20,15 +20,12 @@ import { useState } from "react";
 import { CartContext } from "./Context/CartContext";
 import {useContext } from "react";
 
-const pages = ['exterior', 'interior', 'detalles','Nosotros'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
 const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
-
-  const is_ok=false;
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -119,11 +116,6 @@ const NavBar = () => {
               }}
             >
 
-             {/*  {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))} */}
 
               <Link to='/category/interior' style={{ textDecoration: "none", color: "black" }} >
                  <MenuItem  onClick={handleCloseNavMenu}>
@@ -137,37 +129,10 @@ const NavBar = () => {
                 </MenuItem>
               </Link >
 
-              <Link to='/item/6' style={{ textDecoration: "none", color: "black" }} >
-                 <MenuItem  onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">Detalles Plantas</Typography>
-                </MenuItem>
-              </Link>
-
             </Menu>
           </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-
-            
-            {/* {pages.map((page,ind) =>{ 
-              if (page==="interior")
-                return(
-      
-                <Link to={`/category/${page}`} style={{ textDecoration: "none", color: "white" }} >
-                 <Button
-                   key={ind}
-                   onClick={handleCloseNavMenu}
-                   sx={{ my: 2, color: "white", display: "block" }}
-                 >
-                  Plantas1 {page}
-                 </Button>
-                </Link>
-            
-                )
-              return(null)
-
-              }
-            )} */}
             
 
              <Link to='/category/interior' style={{ textDecoration: "none", color: "white" }} >

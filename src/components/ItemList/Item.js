@@ -6,7 +6,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import {Link} from "react-router-dom";
-import ItemCount from "./ItemCount";
+import ItemCount from "../ItemCount";
 
 const Item=({planta})=>{
 

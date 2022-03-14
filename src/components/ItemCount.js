@@ -1,6 +1,12 @@
 import { useState,useContext } from "react";
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import {TextField } from '@mui/material';
 
 import { green, red} from '@mui/material/colors';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -14,6 +20,11 @@ const ItemCount =({planta}) =>{
    const [contStock,setConStock]=useState(true);
 
    const {addItem} = useContext(CartContext);
+
+   const [mensaje, setMensaje] = useState(false);
+   const manejMenAbrir = () => {setMensaje(true)}; 
+   const manejMenCerrar = () => {setMensaje(false)};
+
   
    const disminuir=(stock)=>{
      let cant=cantidad
@@ -40,7 +51,9 @@ const ItemCount =({planta}) =>{
 
 
     const manejaBotonCarr=()=>{
-      alert(`Cantidad de Plantas en el Carrito: ${cantidad}`);
+
+      //alert(`Cantidad de Plantas en el Carrito: ${cantidad}`);
+      manejMenAbrir();
       setBotCarrito(false);
     }
 
@@ -109,12 +122,49 @@ const ItemCount =({planta}) =>{
 
           </ButtonGroup>
 
-          
          } 
+
+         <Mensaje
+           abrir={mensaje}
+           cerrar={manejMenCerrar}
+           cantidad={cantidad}
+         />
 
          </div>
     );
   }
   
+  function Mensaje(props) {
+
+    const { abrir,cerrar,cantidad } = props;
+  
+    return (
+      <div>
+        
+        <Dialog
+          open={abrir}
+          onClose={cerrar}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">
+            {"Agregando plantas...."}
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-description1">
+
+               Agregaste {cantidad} plantas nuevas al carrito.
+
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button  onClick={cerrar}>
+              Aceptar
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </div>
+    );
+  }
   
   export default ItemCount;

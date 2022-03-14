@@ -2,7 +2,7 @@
 import {useEffect,useState} from 'react'
 import {Grid}  from "@mui/material";
 
-import db from "../helper/firebaseConfig"
+import db from "../../helper/firebaseConfig"
 import { doc, getDoc,} from "firebase/firestore";
 
 import ItemDetail from './ItemDetail';
@@ -47,7 +47,7 @@ const ItemDetailContainer = (props) => {
         spacing={4}
         justify="center"
         justifyContent="center"
-        sx={{ marginTop: 5 }}
+        sx={{ marginTop: 2 }}
       >
         {plant.length > 0 ? (
           <ItemDetail planta={plant[0]} />
