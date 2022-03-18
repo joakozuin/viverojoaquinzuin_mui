@@ -35,9 +35,13 @@ Luego de clonar el repositorio, debe instalar la aplicacion mediante "npm instal
 - Para realizar la compra, se debe ingresar al carrito, clickear en confirmar compra, y completar el formulario con sus datos.
 - Desde allí se recibirá la orden de compra y la misma se registrará en la base de firebase.
 
-# Demo
+# Deploy
 
-![image](./public/img/AbejaFlor.png)
+Puede ejecutar el proyecto desde el siguiente link:
+[https://joakozuin.github.io/viverojoaquinzuin_mui/](https://joakozuin.github.io/viverojoaquinzuin_mui/)
+
+# Demo
+![image](https://firebasestorage.googleapis.com/v0/b/viverojoako.appspot.com/o/img%2FVideo01.gif?alt=media&token=23870f85-2d71-4869-9b1b-52dbe2ddb22d)
  
 
 
