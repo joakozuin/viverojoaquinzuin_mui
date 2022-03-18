@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/viverojoaquinzuin_mui/static/css/main.7da2425b.css",
+    "main.js": "/viverojoaquinzuin_mui/static/js/main.16467b1b.js",
+    "static/media/AvatarJoaquinV02.jpg": "/viverojoaquinzuin_mui/static/media/AvatarJoaquinV02.fdfb1dbc8ef5074c9374.jpg",
+    "static/media/logovivero00.png": "/viverojoaquinzuin_mui/static/media/logovivero00.c76ade7d28731d7f0dae.png",
+    "index.html": "/viverojoaquinzuin_mui/index.html",
+    "main.7da2425b.css.map": "/viverojoaquinzuin_mui/static/css/main.7da2425b.css.map",
+    "main.16467b1b.js.map": "/viverojoaquinzuin_mui/static/js/main.16467b1b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7da2425b.css",
+    "static/js/main.16467b1b.js"
+  ]
+}
