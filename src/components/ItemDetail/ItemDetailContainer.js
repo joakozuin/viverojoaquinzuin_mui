@@ -13,10 +13,9 @@ const ItemDetailContainer = (props) => {
   const [plant, setPlant] = useState([]);
   const {id}=useParams();
 
-   //console.log(`id Destructurado:${id}`);
 
   useEffect(() => {
-    //console.log(`Renderizando id Destructurado:${id} -->${typeof(id)}`);
+    
     const leerBD = async () => {
       try {
         const docRef = doc(db, "plantas1", id);

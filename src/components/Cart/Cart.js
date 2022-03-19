@@ -1,7 +1,7 @@
 import FlexBox from './FlexBox';
 import { Span } from './Typography';
 import CartItem from "../CartList/CartItem";
-import {useContext,useState,useRef } from "react";
+import {useContext,useState} from "react";
 import { CartContext } from "../Context/CartContext";
 import {Link} from "react-router-dom";
 import {Cabeza } from "./Cart.styles";
