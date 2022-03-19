@@ -7,12 +7,17 @@ import { doc, getDoc,} from "firebase/firestore";
 
 import ItemDetail from './ItemDetail';
 import {useParams} from 'react-router-dom'
+import ErrorMensaje from '../ErrorMensaje';
 
 const ItemDetailContainer = (props) => {
 
   const [plant, setPlant] = useState([]);
   const {id}=useParams();
 
+  const [mensajeFormError,setMensajeFormError]=useState(false);
+  const [mensajeError,setMensajeError]=useState("");
+  const manejFormErrorAbrir = () => {setMensajeFormError(true)}; 
+  const manejFormErrorCerrar = () => {setMensajeFormError(false)};
 
   useEffect(() => {
     
@@ -30,7 +35,10 @@ const ItemDetailContainer = (props) => {
 
         setPlant(planta);
       } catch (err) {
-        console.log("El error es:", err);
+        //console.log("El error es:", err);
+        const mens=`Error leyendo la base de datos: ${err}`
+        manejFormErrorAbrir();
+        setMensajeError(mens);
       }
     };
 
@@ -54,6 +62,12 @@ const ItemDetailContainer = (props) => {
           <h1>Cargando Datos....</h1>
         )}
       </Grid>
+
+      <ErrorMensaje
+          abrir={mensajeFormError}
+          cerrar={manejFormErrorCerrar}
+          mensaje={mensajeError}
+         />
     </div>
   );
 };

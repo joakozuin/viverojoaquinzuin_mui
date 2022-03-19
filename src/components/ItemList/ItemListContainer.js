@@ -6,16 +6,18 @@ import db from "../../helper/firebaseConfig"
 import { collection, getDocs,query,where } from "firebase/firestore";
 
 import {useParams} from 'react-router-dom'
-
+import ErrorMensaje from '../ErrorMensaje';
 
 const ItemListContainer = (props) => {
   const [plant, setPlant] = useState([]);
   
   const {categoria}=useParams();
 
-  //console.log(`Categoria Destructurado:${categoria}`);
-
-
+  const [mensajeFormError,setMensajeFormError]=useState(false);
+  const [mensajeError,setMensajeError]=useState("");
+  const manejFormErrorAbrir = () => {setMensajeFormError(true)}; 
+  const manejFormErrorCerrar = () => {setMensajeFormError(false)};
+  
   //Lectura de la BD-->Modo desde firebase
   //**************************************
   useEffect(() => {
@@ -52,7 +54,10 @@ const ItemListContainer = (props) => {
           setPlant(plantass);
         }
       } catch (err) {
-        console.log("El error es:", err);
+        //console.log("El error es:", err);
+        const mens=`Error leyendo la base de datos: ${err}`
+        manejFormErrorAbrir();
+        setMensajeError(mens);
       }
     };
 
@@ -72,6 +77,12 @@ const ItemListContainer = (props) => {
       ) : (
         <h1>Cargando Datos....</h1>
       )}
+
+        <ErrorMensaje
+          abrir={mensajeFormError}
+          cerrar={manejFormErrorCerrar}
+          mensaje={mensajeError}
+         />
 
     </div>
   );

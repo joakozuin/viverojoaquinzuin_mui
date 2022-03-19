@@ -12,7 +12,7 @@ function App() {
 
     <CartContextProvider>
 
-     <BrowserRouter basename={process.env.PUBLIC_URL} >
+     <BrowserRouter basename={process.env.PUBLIC_URL +'/'} >
        <div className="App">
          <NavBar />
           <Routes>

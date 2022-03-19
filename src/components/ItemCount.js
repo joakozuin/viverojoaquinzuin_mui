@@ -51,7 +51,6 @@ const ItemCount =({planta}) =>{
 
     const manejaBotonCarr=()=>{
 
-      //alert(`Cantidad de Plantas en el Carrito: ${cantidad}`);
       manejMenAbrir();
       setBotCarrito(false);
     }

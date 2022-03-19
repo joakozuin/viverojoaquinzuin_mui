@@ -30,7 +30,6 @@ const Cart = () => {
     setAbrirClieForm(false);
   };
 
- // console.log("Dentro Cart carrito",carrito);
 
    const calcularTotal=(carrito)=>{
      const totalComprado=carrito.reduce((sum, item) => sum + item.cantidad * parseFloat(item.precio), 0);
