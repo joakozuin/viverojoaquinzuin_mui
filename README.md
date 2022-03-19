@@ -40,9 +40,9 @@ Luego de clonar el repositorio, debe instalar la aplicacion mediante "npm instal
 Puede ejecutar el proyecto desde el siguiente link:
 [https://joakozuin.github.io/viverojoaquinzuin_mui/](https://joakozuin.github.io/viverojoaquinzuin_mui/)
 
-# Demo
+# Demo de la Aplicación
 
-[Video Demo de Funcionamiento](https://www.canva.com/design/DAE7bOF0HVs/AD5EdC-VoA6JZ_ZgDM8F3g/watch?utm_content=DAE7bOF0HVs&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
+[Hacer Click => Video Demo de Funcionamiento](https://www.canva.com/design/DAE7bOF0HVs/AD5EdC-VoA6JZ_ZgDM8F3g/watch?utm_content=DAE7bOF0HVs&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
 )
 
 
