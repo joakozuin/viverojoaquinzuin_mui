@@ -33,7 +33,7 @@ Luego de clonar el repositorio, debe instalar la aplicacion mediante "npm instal
 - Clickeando sobre el producto se puede ingresar al detalle del mismo, se puede asignar la cantidad de productos que se quieren agregar al carrito, o volver a la página de inicio para solicitar otro producto.
 - Cada producto agregado se ve en el carrito, al que se accede haciendo click en el icono del mismo (arriba a la derecha.)
 - Para realizar la compra, se debe ingresar al carrito, clickear en confirmar compra, y completar el formulario con sus datos.
-- Desde allí se recibirá la orden de compra y la misma se registrará en la base de firebase.
+- Desde allí se recibirá la orden de compra y la misma se registrará en la base de datos de firebase.
 
 # Deploy
 
