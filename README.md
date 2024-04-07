@@ -3,7 +3,7 @@
 ### Comisión 19830
 
 ## Joaquin Sebastian Zuin
-
+## Daniel Zuin
 ------------
 ![image](./public/img/AbejaFlor.png)
 # Proyecto E-Commerce para el vivero Joaquin
